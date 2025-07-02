@@ -6,10 +6,20 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #e0e0e0;
+    background-color: #ff0404;
     /* Fundo cinza claro */
     margin: 0;
     flex-direction: column;
     color: #333333;
     /* Cor do texto padrão cinza escuro */
  }
+
+.spin {
+    animation: spin 5s linear infinite;
+    transform-origin: 50% 50%;
+}
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
