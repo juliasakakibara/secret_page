@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Restrito</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos básicos para centralizar e dar um visual agradável */
+        body {
+            font-family: 'Inter', sans-serif; /* Usando a fonte Inter */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e0e0e0; /* Fundo cinza claro */
+            margin: 0;
+            flex-direction: column;
+            color: #333333; /* Cor do texto padrão cinza escuro */
+        }
+    </style>
+</head>
+<body class="p-4">
+
+    <!-- Formulário de Login - Visível por padrão -->
+    <div id="login-form" class="bg-white p-8 rounded-xl shadow-lg text-center max-w-sm w-full">
+        <h2 class="text-2xl font-bold mb-4">Acesso Restrito</h2>
+        <p class="mb-6 text-gray-700">Por favor, digite a senha para continuar:</p>
+        
+        <input 
+            type="password" 
+            id="passwordInput" 
+            placeholder="Digite a senha aqui" 
+            class="w-full p-3 mb-4 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700"
+            onkeypress="handleKeyPress(event)" /* Permite submeter com Enter */
+        >
+        
+        <button 
+            onclick="checkPassword()" 
+            class="w-full bg-gray-800 text-white py-3 rounded-lg font-semibold hover:bg-black transition duration-300 ease-in-out shadow-md"
+        >
+            Entrar
+        </button>
+        
+        <p id="errorMessage" class="text-gray-700 mt-4 hidden">Senha incorreta. Tente novamente!</p>
+    </div>
+
+    <!-- Conteúdo Protegido - Inicialmente oculto -->
+    <div id="protectedContent" class="hidden bg-white p-8 rounded-xl shadow-lg mt-8 max-w-2xl w-full text-center">
+        <h1 class="text-3xl font-bold mb-4 text-gray-800">🎉 Parabéns! Você encontrou o presente! 🎉</h1>
+        <p class="text-lg text-gray-700 mb-6">Clique no botão abaixo para resgatar seu presente especial:</p>
+        
+        <a 
+            href="https://drive.google.com/file/d/1FpcnsCR_ZkInGSAHwJcn8FNz_79hZpfC/view?usp=sharing" 
+            target="_blank" 
+            class="inline-block bg-gray-800 text-white py-3 px-6 rounded-lg font-semibold text-xl hover:bg-black transition duration-300 ease-in-out shadow-md"
+        >
+            Resgatar Presente
+        </a>
+        
+        <p class="text-sm text-gray-500 mt-4">Aproveite o seu dia!</p>
+    </div>
+
+    <script>
+        // Função principal para verificar a senha
+        function checkPassword() {
+            // A senha correta. MUDE ESTA SENHA PARA A SUA ESCOLHA!
+            // The correct password. CHANGE THIS PASSWORD TO YOUR CHOICE!
+            const correctPassword = "minhasenha123"; 
+            
+            // Obtém o valor digitado no campo de senha
+            // Gets the value entered in the password field
+            const passwordInput = document.getElementById("passwordInput");
+            const enteredPassword = passwordInput.value;
+            
+            // Obtém os elementos HTML para manipular sua visibilidade
+            // Gets the HTML elements to manipulate their visibility
+            const loginForm = document.getElementById("login-form");
+            const protectedContent = document.getElementById("protectedContent");
+            const errorMessage = document.getElementById("errorMessage");
+
+            // Compara a senha digitada com a senha correta
+            // Compares the entered password with the correct password
+            if (enteredPassword === correctPassword) {
+                // Se a senha estiver correta:
+                // If the password is correct:
+                loginForm.classList.add("hidden"); // Oculta o formulário de login
+                protectedContent.classList.remove("hidden"); // Mostra o conteúdo protegido
+                errorMessage.classList.add("hidden"); // Garante que a mensagem de erro esteja oculta
+            } else {
+                // Se a senha estiver incorreta:
+                // If the password is incorrect:
+                errorMessage.classList.remove("hidden"); // Mostra a mensagem de erro
+                passwordInput.value = ""; // Limpa o campo da senha
+                passwordInput.focus(); // Coloca o foco de volta no campo da senha para nova tentativa
+            }
+        }
+
+        // Função para lidar com a tecla Enter no campo de senha
+        // Function to handle the Enter key in the password field
+        function handleKeyPress(event) {
+            // Verifica se a tecla pressionada foi 'Enter' (código 13)
+            // Checks if the pressed key was 'Enter' (key code 13)
+            if (event.key === 'Enter') {
+                checkPassword(); // Chama a função de verificação de senha
+            }
+        }
+    </script>
+
+</body>
+</html>
