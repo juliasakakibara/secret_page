@@ -1,0 +1,15 @@
+        /* Estilos básicos para centralizar e dar um visual agradável */
+body {
+    font-family: 'Inter', sans-serif;
+    /* Usando a fonte Inter */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0e0e0;
+    /* Fundo cinza claro */
+    margin: 0;
+    flex-direction: column;
+    color: #333333;
+    /* Cor do texto padrão cinza escuro */
+ }
