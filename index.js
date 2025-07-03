@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainImage = document.getElementById("mainImage");
     if (mainImage) {
         function showSmileAndConfetti(e) {
-            mainImage.src = "smile.png";
+            mainImage.src = "Smile.png";
             if (window.confetti) {
                 window.confetti({
                     particleCount: 120,
