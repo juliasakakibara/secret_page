@@ -1,68 +1,77 @@
 * {
-    border-radius: 0 !important;
+        border-radius: 0 !important;
+}
+
+html,
+body {
+        width: 100%;
+        overflow-x: hidden;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    background-color: #E63626 !important;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        background-color: #E63626 !important;
 }
 
 .spin {
-    animation: spin 5s linear infinite;
-    transform-origin: 50% 50%;
+        animation: spin 5s linear infinite;
+        transform-origin: 50% 50%;
 }
+
 @keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
+        100% {
+                transform: rotate(360deg);
+        }
 }
 
 img {
-    filter: grayscale(100%);
+        filter: grayscale(100%);
 }
 
 /* Windows 95/2000 Card Styles */
 .win95-card {
-    border-width: 4px;
-    border-style: outset;
-    border-color: #dfdfdf #404040 #404040 #dfdfdf;
-    background: #c0c0c0;
-    font-family: 'VT323', 'Fira Mono', 'Consolas', monospace;
+        border-width: 4px;
+        border-style: outset;
+        border-color: #dfdfdf #404040 #404040 #dfdfdf;
+        background: #c0c0c0;
+        font-family: 'VT323', 'Fira Mono', 'Consolas', monospace;
 }
 
 .win95-bar {
-    background: linear-gradient(90deg, #3a3a3c 70%, #404040 100%);
-    border-bottom: 2px solid #000;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.01em;
+        background: linear-gradient(90deg, #3a3a3c 70%, #404040 100%);
+        border-bottom: 2px solid #000;
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
 }
 
 .win95-input {
-    font-family: 'VT323', monospace;
-    font-size: 1.05rem;
-    border-width: 2px;
-    border-style: inset;
-    border-color: #fff #404040 #404040 #fff;
-    box-shadow: none;
+        font-family: 'VT323', monospace;
+        font-size: 1.05rem;
+        border-width: 2px;
+        border-style: inset;
+        border-color: #fff #404040 #404040 #fff;
+        box-shadow: none;
 }
 
 .win95-btn {
-    background: #e0e0e0;
-    border: 2px outset #fff;
-    border-color: #fff #404040 #404040 #fff;
-    color: #000;
-    font-family: 'VT323', monospace;
-    font-size: 1.1rem;
-    font-weight: 600;
-    box-shadow: 2px 2px 0 #fff, 4px 4px 0 #000;
-    transition: background 0.2s;
+        background: #e0e0e0;
+        border: 2px outset #fff;
+        border-color: #fff #404040 #404040 #fff;
+        color: #000;
+        font-family: 'VT323', monospace;
+        font-size: 1.1rem;
+        font-weight: 600;
+        box-shadow: 2px 2px 0 #fff, 4px 4px 0 #000;
+        transition: background 0.2s;
 }
+
 .win95-btn:hover {
-    background: #afafaf;
+        background: #afafaf;
 }
+
 .win95-btn:active {
-    background: #818181;
+        background: #818181;
 }
