@@ -1,5 +1,5 @@
 function checkPassword() {
-    const correctPassword = "minhasenha123";
+    const correctPassword = "teamo";
     const passwordInput = document.getElementById("passwordInput");
     const enteredPassword = passwordInput.value;
     const loginForm = document.getElementById("login-form");
@@ -19,7 +19,7 @@ function checkPassword() {
 
 // Adiciona eventos após o DOM estar pronto
 document.addEventListener("DOMContentLoaded", function () {
-    // Evento Enter no input de senha
+    // Evento no input de senha
     const passwordInput = document.getElementById("passwordInput");
     if (passwordInput) {
         passwordInput.addEventListener("keypress", function (event) {
@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    
-// Troca de imagem ao clicar/tocar + confetti
+
+    // Troca de imag + confetti on click
     const mainImage = document.getElementById("mainImage");
     if (mainImage) {
         function showSmileAndConfetti(e) {
@@ -61,6 +61,28 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         mainImage.addEventListener("touchcancel", function () {
             mainImage.src = "Serious.png";
+        });
+    }
+// Modal de dica da senha
+    const forgotBtn = document.getElementById("forgotBtn");
+    const modalDica = document.getElementById("modalDica");
+    const closeModal = document.getElementById("closeModal");
+    const closeModal2 = document.getElementById("closeModal2");
+
+    if (forgotBtn && modalDica) {
+        forgotBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            modalDica.classList.remove("hidden");
+        });
+    }
+    if (closeModal && modalDica) {
+        closeModal.addEventListener("click", function () {
+            modalDica.classList.add("hidden");
+        });
+    }
+    if (closeModal2 && modalDica) {
+        closeModal2.addEventListener("click", function () {
+            modalDica.classList.add("hidden");
         });
     }
 });

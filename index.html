@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,57 +9,64 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
+
 <body class="bg-[#008080] flex flex-col items-center justify-center min-h-screen">
     <!-- Área das imagens -->
     <div class="flex justify-center mb-6 relative max-w-sm w-full mx-auto" style="aspect-ratio: 1 / 1;">
-        <!-- Container da estrela -->
+        <!-- Container estrela -->
         <div class="absolute inset-0 z-0">
             <img src="Star.png" alt="Estrela decorativa"
                 class="spin w-full h-full object-contain opacity-60 pointer-events-none grayscale">
         </div>
-        <!-- Imagem principal -->
-        <img id="mainImage" src="Serious.png" alt="Imagem destaque"
+        <!-- Imagem do melhor namorado do mundo -->
+        <img id="mainImage" src="Serious.png" alt="O melhor namorado do mundo s2"
             class="relative z-10 w-2/3 max-w-[200px] h-auto object-contain mx-auto m-auto grayscale">
     </div>
-    <!-- Formulário de Login - Visual Win95/2000 -->
+    <!-- Card Login -->
     <div id="login-form"
-        class="win95-card shadow-xl text-center max-w-sm w-full mx-auto p-8 border-4 border-solid"
+        class="win95-card shadow-xl text-center max-w-sm w-full mx-4 sm:mx-auto p-8 border-4 border-solid"
         style="border-color: #dfdfdf #404040 #404040 #dfdfdf; background: #c0c0c0; font-family: 'VT323', monospace;">
         <div class="win95-bar flex items-center justify-between px-3 py-1 mb-4">
             <span>Acesso Restrito</span>
         </div>
         <p class="mb-6 text-gray-800 font-semibold">Por favor, digite a senha para continuar:</p>
-        <input 
-            type="password" 
-            id="passwordInput" 
-            placeholder="Digite a senha aqui" 
-            class="win95-input w-full p-3 mb-4 border border-gray-500 bg-gray-100 focus:bg-white focus:outline-none focus:border-blue-800 transition-all"
-        />
-        <button 
-            id="entrarBtn"
-            onclick="checkPassword()" 
-            class="win95-btn w-full font-bold py-3 mt-2"
-        >
+        <input type="password" id="passwordInput" placeholder="Digite a senha aqui"
+            class="win95-input w-full p-3 mb-4 border border-gray-500 bg-gray-100 focus:bg-white focus:outline-none focus:border-blue-800 transition-all" />
+        <button id="entrarBtn" onclick="checkPassword()" class="win95-btn w-full font-bold py-3 mt-2">
             Entrar
         </button>
+        <a href="#" id="forgotBtn" class="block mt-5 text-blue-800 underline text-md hover:text-blue-500 transition"
+            style="font-family: 'VT323', monospace;">
+            Esqueci minha senha
+        </a>
         <p id="errorMessage" class="text-pink-700 mt-4 hidden font-bold">Senha incorreta. Tente novamente!</p>
     </div>
-    <!-- Conteúdo Protegido -->
-<div id="protectedContent"
-     class="hidden win95-card shadow-xl mt-8 max-w-2xl w-full text-center p-8 border-4 border-solid mx-4 sm:mx-4"
-     style="border-color: #dfdfdf #404040 #404040 #dfdfdf; background: #c0c0c0; font-family: 'VT323', monospace;">
-    <h1 class="text-3xl font-bold mb-4 text-gray-800">🎉 Parabéns! Você encontrou o presente! 🎉</h1>
-    <p class="text-lg text-gray-700 mb-6">Clique no botão abaixo para resgatar seu presente especial:</p>
-    <a 
-        href="https://drive.google.com/file/d/1FpcnsCR_ZkInGSAHwJcn8FNz_79hZpfC/view?usp=sharing" 
-        target="_blank" 
-        class="win95-btn inline-block font-bold text-xl px-6 py-3 mt-2"
-    >
-        Resgatar Presente
-    </a>
-    <p class="text-sm text-gray-600 mt-4">Aproveite o seu dia!</p>
-</div>
+    <!-- Modal de dicas da senha -->
+    <div id="modalDica" class="fixed inset-0 bg-black/40 flex items-center justify-center z-50 hidden">
+        <div class="win95-card p-6 max-w-xs w-full text-center border-4 border-solid"
+            style="border-color: #dfdfdf #404040 #404040 #dfdfdf; background: #c0c0c0;">
+            <div class="win95-bar flex items-center justify-between px-3 py-1 mb-4">
+                <span>Dica da Senha</span>
+                <button id="closeModal" class="text-black font-bold" style="font-size: 1.2rem;">×</button>
+            </div>
+            <p class="mb-4 text-gray-800">Duas palavras que costumam ser usadas antes de "bem muitão"!</p>
+            <button id="closeModal2" class="win95-btn w-full font-bold py-2 mt-2">Fechar</button>
+        </div>
+    </div>
+    <!-- Card Protegido -->
+    <div id="protectedContent"
+        class="hidden win95-card shadow-xl mt-8 max-w-2xl w-full text-center p-4 sm:p-8 border-4 border-solid mx-4 mx-auto"
+        style="border-color: #dfdfdf #404040 #404040 #dfdfdf; background: #c0c0c0; font-family: 'VT323', monospace;">
+        <h1 class="text-3xl font-bold mb-4 text-gray-800">🎉 Parabéns! Você encontrou o presente! 🎉</h1>
+        <p class="text-lg text-gray-700 mb-6">Clique no botão abaixo para resgatar seu presente especial:</p>
+        <a href="https://drive.google.com/file/d/1FpcnsCR_ZkInGSAHwJcn8FNz_79hZpfC/view?usp=sharing" target="_blank"
+            class="win95-btn inline-block font-bold text-xl px-6 py-3 mt-2">
+            Resgatar Presente
+        </a>
+        <p class="text-sm text-gray-600 mt-4">Aproveite o seu dia!</p>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="index.js"></script>
 </body>
+
 </html>
