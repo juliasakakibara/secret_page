@@ -6,58 +6,59 @@
     <title>Acesso Restrito</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
-<body class="p-4">
-<div class="flex justify-center mb-6 relative max-w-sm w-full mx-auto" style="aspect-ratio: 1 / 1;">
-    <!-- Container da estrela -->
-    <div class="absolute inset-0 z-0">
-        <img src="star.png" alt="Estrela decorativa"
-            class="spin w-full h-full object-contain opacity-40 pointer-events-none">
+<body class="bg-[#008080] flex flex-col items-center justify-center min-h-screen">
+    <!-- Área das imagens -->
+    <div class="flex justify-center mb-6 relative max-w-sm w-full mx-auto" style="aspect-ratio: 1 / 1;">
+        <!-- Container da estrela -->
+        <div class="absolute inset-0 z-0">
+            <img src="star.png" alt="Estrela decorativa"
+                class="spin w-full h-full object-contain opacity-60 pointer-events-none grayscale">
+        </div>
+        <!-- Imagem principal -->
+        <img id="mainImage" src="Serious.png" alt="Imagem destaque"
+            class="relative z-10 w-2/3 max-w-[200px] h-auto object-contain mx-auto m-auto grayscale">
     </div>
-    <!-- Imagem principal -->
-    <img src="Serious.png" alt="Imagem destaque" class="relative z-10 w-2/3 max-w-[200px] h-auto object-contain mx-auto m-auto">
-</div>
-    <!-- Formulário de Login - Visível por padrão -->
-    <div id="login-form" class="bg-white p-8 rounded-xl shadow-lg text-center max-w-sm w-full">
-        <h2 class="text-2xl font-bold mb-4">Acesso Restrito</h2>
-        <p class="mb-6 text-gray-700">Por favor, digite a senha para continuar:</p>
-        
-     <input 
-    type="password" 
-    id="passwordInput" 
-    placeholder="Digite a senha aqui" 
-    class="w-full p-3 mb-4 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700"
-/>
-
-<button 
-    id="entrarBtn"
-    onclick="checkPassword()" 
-    class="w-full bg-gray-800 text-white py-3 rounded-lg font-semibold hover:bg-black transition duration-300 ease-in-out shadow-md"
->
-    Entrar
-</button>
-        
-        <p id="errorMessage" class="text-gray-700 mt-4 hidden">Senha incorreta. Tente novamente!</p>
-    </div>
-
-    <!-- Conteúdo Protegido - Inicialmente oculto -->
-    <div id="protectedContent" class="hidden bg-white p-8 rounded-xl shadow-lg mt-8 max-w-2xl w-full text-center">
-        <h1 class="text-3xl font-bold mb-4 text-gray-800">🎉 Parabéns! Você encontrou o presente! 🎉</h1>
-        <p class="text-lg text-gray-700 mb-6">Clique no botão abaixo para resgatar seu presente especial:</p>
-        
-        <a 
-            href="https://drive.google.com/file/d/1FpcnsCR_ZkInGSAHwJcn8FNz_79hZpfC/view?usp=sharing" 
-            target="_blank" 
-            class="inline-block bg-gray-800 text-white py-3 px-6 rounded-lg font-semibold text-xl hover:bg-black transition duration-300 ease-in-out shadow-md"
+    <!-- Formulário de Login - Visual Win95/2000 -->
+    <div id="login-form"
+        class="win95-card shadow-xl text-center max-w-sm w-full mx-auto p-8 border-4 border-solid"
+        style="border-color: #dfdfdf #404040 #404040 #dfdfdf; background: #c0c0c0; font-family: 'VT323', monospace;">
+        <div class="win95-bar flex items-center justify-between px-3 py-1 mb-4">
+            <span>Acesso Restrito</span>
+        </div>
+        <p class="mb-6 text-gray-800 font-semibold">Por favor, digite a senha para continuar:</p>
+        <input 
+            type="password" 
+            id="passwordInput" 
+            placeholder="Digite a senha aqui" 
+            class="win95-input w-full p-3 mb-4 border border-gray-500 bg-gray-100 focus:bg-white focus:outline-none focus:border-blue-800 transition-all"
+        />
+        <button 
+            id="entrarBtn"
+            onclick="checkPassword()" 
+            class="win95-btn w-full font-bold py-3 mt-2"
         >
-            Resgatar Presente
-        </a>
-        
-        <p class="text-sm text-gray-500 mt-4">Aproveite o seu dia!</p>
+            Entrar
+        </button>
+        <p id="errorMessage" class="text-pink-700 mt-4 hidden font-bold">Senha incorreta. Tente novamente!</p>
     </div>
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script src="index.js"></script>
-
+    <!-- Conteúdo Protegido -->
+<div id="protectedContent"
+     class="hidden win95-card shadow-xl mt-8 max-w-2xl w-full text-center p-8 border-4 border-solid mx-4 sm:mx-4"
+     style="border-color: #dfdfdf #404040 #404040 #dfdfdf; background: #c0c0c0; font-family: 'VT323', monospace;">
+    <h1 class="text-3xl font-bold mb-4 text-gray-800">🎉 Parabéns! Você encontrou o presente! 🎉</h1>
+    <p class="text-lg text-gray-700 mb-6">Clique no botão abaixo para resgatar seu presente especial:</p>
+    <a 
+        href="https://drive.google.com/file/d/1FpcnsCR_ZkInGSAHwJcn8FNz_79hZpfC/view?usp=sharing" 
+        target="_blank" 
+        class="win95-btn inline-block font-bold text-xl px-6 py-3 mt-2"
+    >
+        Resgatar Presente
+    </a>
+    <p class="text-sm text-gray-600 mt-4">Aproveite o seu dia!</p>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

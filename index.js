@@ -29,34 +29,38 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Confetti no hover/click do botão "Entrar"
-    const entrarBtn = document.getElementById("entrarBtn");
-    if (entrarBtn) {
-
-        entrarBtn.addEventListener("mouseenter", function (e) {
-    console.log("Hover detectado!");
-    if (window.confetti) {
-        window.confetti({
-            particleCount: 60,
-            spread: 70,
-            origin: {
-                x: (e.clientX || entrarBtn.getBoundingClientRect().left + entrarBtn.offsetWidth / 2) / window.innerWidth,
-                y: (e.clientY || entrarBtn.getBoundingClientRect().top + entrarBtn.offsetHeight / 2) / window.innerHeight
-            }
-        });
-    }
-});
-        entrarBtn.addEventListener("click", function (e) {
+    
+// Troca de imagem ao clicar/tocar + confetti
+    const mainImage = document.getElementById("mainImage");
+    if (mainImage) {
+        function showSmileAndConfetti(e) {
+            mainImage.src = "smile.png";
             if (window.confetti) {
                 window.confetti({
                     particleCount: 120,
                     spread: 100,
                     origin: {
-                        x: (e.clientX || entrarBtn.getBoundingClientRect().left + entrarBtn.offsetWidth / 2) / window.innerWidth,
-                        y: (e.clientY || entrarBtn.getBoundingClientRect().top + entrarBtn.offsetHeight / 2) / window.innerHeight
+                        x: (e.clientX || mainImage.getBoundingClientRect().left + mainImage.offsetWidth / 2) / window.innerWidth,
+                        y: (e.clientY || mainImage.getBoundingClientRect().top + mainImage.offsetHeight / 2) / window.innerHeight
                     }
                 });
             }
+        }
+
+        mainImage.addEventListener("mousedown", showSmileAndConfetti);
+        mainImage.addEventListener("touchstart", showSmileAndConfetti);
+
+        mainImage.addEventListener("mouseup", function () {
+            mainImage.src = "Serious.png";
+        });
+        mainImage.addEventListener("mouseleave", function () {
+            mainImage.src = "Serious.png";
+        });
+        mainImage.addEventListener("touchend", function () {
+            mainImage.src = "Serious.png";
+        });
+        mainImage.addEventListener("touchcancel", function () {
+            mainImage.src = "Serious.png";
         });
     }
-})
+});

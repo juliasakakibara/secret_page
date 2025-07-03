@@ -1,18 +1,12 @@
-        /* Estilos básicos para centralizar e dar um visual agradável */
+* {
+    border-radius: 0 !important;
+}
+
 body {
     font-family: 'Inter', sans-serif;
-    /* Usando a fonte Inter */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #ff0404;
-    /* Fundo cinza claro */
     margin: 0;
-    flex-direction: column;
-    color: #333333;
-    /* Cor do texto padrão cinza escuro */
- }
+    background-color: #E63626 !important;
+}
 
 .spin {
     animation: spin 5s linear infinite;
@@ -22,4 +16,53 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+img {
+    filter: grayscale(100%);
+}
+
+/* Windows 95/2000 Card Styles */
+.win95-card {
+    border-width: 4px;
+    border-style: outset;
+    border-color: #dfdfdf #404040 #404040 #dfdfdf;
+    background: #c0c0c0;
+    font-family: 'VT323', 'Fira Mono', 'Consolas', monospace;
+}
+
+.win95-bar {
+    background: linear-gradient(90deg, #3a3a3c 70%, #404040 100%);
+    border-bottom: 2px solid #000;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.win95-input {
+    font-family: 'VT323', monospace;
+    font-size: 1.05rem;
+    border-width: 2px;
+    border-style: inset;
+    border-color: #fff #404040 #404040 #fff;
+    box-shadow: none;
+}
+
+.win95-btn {
+    background: #e0e0e0;
+    border: 2px outset #fff;
+    border-color: #fff #404040 #404040 #fff;
+    color: #000;
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 2px 2px 0 #fff, 4px 4px 0 #000;
+    transition: background 0.2s;
+}
+.win95-btn:hover {
+    background: #afafaf;
+}
+.win95-btn:active {
+    background: #818181;
 }
